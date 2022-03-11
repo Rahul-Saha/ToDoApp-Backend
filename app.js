@@ -8,13 +8,13 @@ require('dotenv').config();
 const taskRoutes =  require('./api/routes/tasks');
 
 const uri = process.env.MONGODB_URI;
-mongoose.connect('mongodb+srv://todouser:' +
+/* mongoose.connect('mongodb+srv://todouser:' +
  process.env.MONGO_ATLAS_PW + 
  '@cluster0.gxnmq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 // {
 //    useMongoClient: true 
 // }
-);
+); */
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
