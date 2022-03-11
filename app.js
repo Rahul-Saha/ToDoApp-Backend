@@ -15,6 +15,7 @@ const uri = process.env.MONGODB_URI;
 //    useMongoClient: true 
 // }
 ); */
+mongoose.connect(uri);
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
