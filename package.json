@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Rahul-Saha/ToDoApp-Backend#readme",
   "dependencies": {
     "body-parser": "^1.19.2",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "mongoose": "^6.2.5",
     "morgan": "^1.10.0"
