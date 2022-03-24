@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Origin", ["http://localhost:4200", "https://rahul-todoapp.herokuapp.com/"]);
     res.header("Access-Control-Allow-Headers",
     "Origin, X-Requested-with, Content-Type, Accept, Authorization");
     if (req.method === "OPTIONS") {
@@ -32,24 +32,25 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/tasks', taskRoutes);
+app.use('/', taskRoutes);
+// app.use('/tasks', taskRoutes);
 
-app.use((req, res, next) => {
-    const error = new Error('Not found');
-    error.status = 404;
-    next(error);
-});
+// app.use((req, res, next) => {
+//     const error = new Error('Not found');
+//     error.status = 404;
+//     next(error);
+// });
 
-app.use((err, req, res, next) => {
-    // console.log('req : ',req.body);
-    console.log(err.stack);
-    res.status(err.status || 500);
-    res.json({
-        error:{
-            message: err.message,
-        }
-    });
-});
+// app.use((err, req, res, next) => {
+//     // console.log('req : ',req.body);
+//     console.log(err.stack);
+//     res.status(err.status || 500);
+//     res.json({
+//         error:{
+//             message: err.message,
+//         }
+//     });
+// });
 
 /* app.use((req, res, next) => {
     res.status(200).json({
